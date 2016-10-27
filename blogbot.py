@@ -57,7 +57,7 @@ def uploadImages(fileNames):
     secretKey = '...'
     q = Auth(accessKey, secretKey)
 
-    # 要上传的七牛上的 bucket 名
+    # 七牛上的 bucket 名
     bucketName = '...'
     # 这个 bucket 的外链前缀，就是七牛后台的“外链默认域名”
     imageUrlPrefix = "http://xxxxxx.bkt.clouddn.com/"
@@ -73,7 +73,7 @@ def uploadImages(fileNames):
         # 上传到七牛的文件名
         key = fileNamePrefix + fileName
 
-        # 生成上传 Token，可以指定过期时间等
+        # 生成上传 Token
         token = q.upload_token(bucketName, key, 3600)
 
         # 上传
