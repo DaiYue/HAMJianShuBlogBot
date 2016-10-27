@@ -45,5 +45,3 @@
 ## 代码讲解
 
 代码非常简单，[我的这篇博客](http://www.jianshu.com/p/ac1db9114cc4)里有简短的解释。
-
-Enjoy~
