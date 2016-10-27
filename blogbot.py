@@ -15,6 +15,7 @@ def readTextFromFile(fileName):
     finally:
         file.close()
 
+# 写文件
 def writeTextToFile(text, fileName):
     file = open(fileName, 'w')
 
@@ -30,7 +31,7 @@ def findImageUrlsInText(text):
     reg = r'!\[[^\]]*\]\(([^\)]+)\)'
     imageUrlReg = re.compile(reg)
 
-    # 正则匹配得出
+    # 正则匹配，找出所有图片链接
     imageUrls = re.findall(imageUrlReg, text)
 
     return imageUrls
@@ -51,15 +52,15 @@ def downloadImages(imageUrls):
     return fileNames
 
 def uploadImages(fileNames):
-    # 需要填写你的 Access Key 和 Secret Key
-    accessKey = '-QXhBFT8CwnXPcd-ndyxegL5So8mo3u51kOwIBEn'
-    secretKey = 'UXz85oOJqmWgKKK7GT11ypytWtDxOw_-Tv5CUHD4'
+    # 在此处填写你的七牛 Access Key 和 Secret Key
+    accessKey = '...'
+    secretKey = '...'
     q = Auth(accessKey, secretKey)
 
     # 要上传的七牛上的 bucket 名
-    bucketName = 'hamblog'
+    bucketName = '...'
     # 这个 bucket 的外链前缀，就是七牛后台的“外链默认域名”
-    imageUrlPrefix = "http://ofn9yuqom.bkt.clouddn.com/"
+    imageUrlPrefix = "http://xxxxxx.bkt.clouddn.com/"
 
     # 上传到七牛的文件名前缀
     fileNamePrefix = "blog" + time.strftime('%Y%m%d',time.localtime(time.time())) + "_"
